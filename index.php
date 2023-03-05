@@ -1,4 +1,13 @@
 <?php
+session_start();
+$page = null;
+if(isset($_GET['page']))
+    $page = $_GET['page'];
+
+//if(isset($_SESSION['user_id']) || $page == null){
+//    header('Location:http://localhost/medicina/index.php?page='. 'login');
+//}
+
 ?>
 
 <html lang="en">
@@ -18,11 +27,11 @@
     <div class="container-fluid" id="main">
         <?php //require ("login.php")
         //echo json_encode(get_Attivita_Form());
-        require('./showtables.php');
+        require ('./showFormative.php');
         ?>
     </div>
     <div class="container-fluid" id="footer">
-
+        <?php require_once("footer.php");?>
     </div>
 </body>
 </html>

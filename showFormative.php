@@ -10,7 +10,8 @@ function get_Attivita_Form()
 }
 
 $sql = "SELECT *
-    from piano_di_studi pds 
+    from formativa_didattica fd
+    inner join piano_di_studi pds on pds.codice = fd.didattica
     where 1=1;";
 $result = $db_conn->query($sql);
 $atf_get_all =array();
@@ -19,24 +20,10 @@ if ($result->num_rows > 0) {
         array_push($atf_get_all, $row);
     }
 }
-unset($sql);
-
-$sql  = "SELECT didattica
-FROM formativa_didattica
-WHERE 1=1";
-
-$result_second = $db_conn->query($sql);
-while ($row = $result_second->fetch_assoc()) {
-    for($i = 0; $i < count($atf_get_all); $i++){
-        if( $atf_get_all[$i]['codice'] == $row['didattica'] ){
-            array_splice($atf_get_all, $i, 1);
-            break;
-        }
-    }
-}
 
 ?>
 <h1 style = "text-align: center">Attività formative</h1>
+<div class="table-responsive" style="max-height:50%; oveflow:scroll;">
 <table class="table" style="margin-left: auto;
   margin-right: auto; text-align:center;">
     <thead>
@@ -56,7 +43,7 @@ while ($row = $result_second->fetch_assoc()) {
             <td><?php echo $row['nome']?></td>
             <td><?php echo $row['CFU']?></td>
             <td><?php echo $row['settore']?></td>
-            <td><button>Ciao</button></td>
+            <td><button>Modifica</button></td>
         </tr>
         <!--<tr>
             <th scope="row">2</th>
@@ -73,3 +60,4 @@ while ($row = $result_second->fetch_assoc()) {
         <?php } ?>
     </tbody>
 </table>
+</div>
