@@ -27,7 +27,7 @@ if(isset($_GET['page']))
     <div class="container-fluid" id="main">
         <?php //require ("login.php")
         //echo json_encode(get_Attivita_Form());
-        require ('./showFormative.php');
+        require ('./form_add_ud.php');
         ?>
     </div>
     <div class="container-fluid" id="footer">
