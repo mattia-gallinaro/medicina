@@ -1,6 +1,6 @@
 <?php
 require_once('./connect.php');
-echo $_SESSION['user_id']; 
+//echo $_SESSION['user_id']; 
 if (isset($_POST['email']) || isset($_POST['password'])) {
   echo ($_POST['email'] . $_POST['password']);
   $db = new Database();
@@ -50,7 +50,7 @@ if (isset($_POST['email']) || isset($_POST['password'])) {
   </div>
 
   <!-- Submit button -->
-  <button type="submit" class="btn btn-primary btn-block mb-4">Sign in</button>
+  <button type="submit" class="btn btn-outline-dark btn-block mb-4" style="position:absolute;">Sign in</button>
 
   <!-- Register buttons -->
   <div class="text-center">
