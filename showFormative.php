@@ -22,8 +22,8 @@ if ($result->num_rows > 0) {
 }
 
 ?>
-<h1 style = "text-align: center">Attività formative</h1>
-<div class="table-responsive" style="max-height:50%; oveflow:scroll;">
+<h1 style = "text-align: center">Unitá didattiche</h1>
+<div class="table-responsive" style="max-height:50%; overflow:scroll;">
 <table class="table" style="margin-left: auto;
   margin-right: auto; text-align:center;">
     <thead>

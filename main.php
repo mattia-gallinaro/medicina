@@ -1,17 +1,17 @@
 <?php
 $page = $_GET['page'];
 switch ($page) {
-    case 0:
-        echo "login";
+    case "login":
+        include_once("./login.php");
         break;
-    case 1:
-        echo "attività didattiche";
+    case "homepage":
+        include_once("./homepage.php");
         break;
-    case 2:
-        echo "edit attività";
+    case "mostra_uda":
+        include_once("./showFormative.php");
         break;
-    case 3:
-        echo "unità formativa";
+    case "mostra_at":
+        include_once('./showtables.php');
         break;
     case 4:
         echo "edit unità";

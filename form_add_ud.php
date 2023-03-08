@@ -5,14 +5,6 @@ $db = new Database();
 $db_conn = $db->connect();
 
 
-if(isset($_POST['nome']) && isset($_POST['CFU']) && isset($_POST['settore']) && isset($_POST['lang'])){
-    //$sql = sprintf(" INSERT INTO piano_di_studi (codice, nome, CFU, settore)
-    //VALUES('%s', '%s', %d, '%s')
-     //", $_POST['codice'], $_POST['nome'], $_POST['CFU'], $_POST['settore']);
-     //$db_conn->query($sql);
-     echo json_encode($_POST['lang']);
-}
-
 $sql = "SELECT *
     from piano_di_studi pds 
     where 1=1;";
@@ -42,27 +34,27 @@ while ($row = $result_second->fetch_assoc()) {
 ?>
 
 <div class="containe-fluid" style="background-color:#ffffff;">
-    <form method="POST">
+    <form method="POST" onsubmit="return validateForm();" action="./createUd.php">
         <div class="row mb-4">
             <div class="col">
                 <div class="form-outline">
-                    <input type="text" id="form6Example1" class="form-control" name="codice"/>
+                    <input type="text" id="form6Example1" class="form-control campo_form" name="codice"/>
                     <label class="form-label" for="form6Example1">Codice</label>
                 </div>
             </div>
             <div class="col">
                 <div class="form-outline">
-                    <input type="text" id="form6Example2" class="form-control" name="nome"/>
+                    <input type="text" id="form6Example2" class="form-control campo_form" name="nome"/>
                     <label class="form-label" for="form6Example2">nome</label>
                 </div>
             </div>
         </div>
         <div class="form-outline mb-4">
-            <input type="text" id="form6Example3" class="form-control" name="CFU"/>
+            <input type="text" id="form6Example3" class="form-control campo_form" name="CFU"/>
             <label class="form-label" for="form6Example3">CFU</label>
         </div>
         <div class="form-outline mb-4">
-            <input type="text" id="form6Example4" class="form-control" name="settore"/>
+            <input type="text" id="form6Example4" class="form-control campo_form" name="settore"/>
             <label class="form-label" for="form6Example4">Settore</label>
         </div>
         <div class="form-outline mb-4">
@@ -78,5 +70,15 @@ while ($row = $result_second->fetch_assoc()) {
 <script type="text/javascript">
     $("input.check").on("change", function(){
         $("input.check").not(this).prop('checked', false);
-    })        
+    })
+    
+
+    function validateForm(){
+        var input_box  = document.getElementsByClassName();
+        for(var i = 0; i < input_box.length; i++){
+            if(input_box[i].value == "" || input_box[i].value == null){
+                alert("Riempi i campi");
+            }
+        }
+    }
 </script>

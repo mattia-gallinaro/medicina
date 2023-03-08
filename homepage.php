@@ -10,7 +10,7 @@ inner join ruolo r on r.id = u.ruolo
 WHERE u.id= %d", $_SESSION['user_id']);
 $result = $db_conn->query($sql);
 $final = $result->fetch_assoc();
-echo json_encode($final);
+
 
 function logout(){
     $_SESSION['user_id'] = null;

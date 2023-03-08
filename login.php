@@ -14,7 +14,7 @@ if (isset($_POST['email']) || isset($_POST['password'])) {
   while($row = $result->fetch_assoc()){
     if($row['email'] == $_POST['email'] && $row['passwd'] == $_POST['password']){
       $_SESSION['user_id'] = $row['id'];
-      header('Location: http://localhost/medicina/index.php?page=homepage.php');
+      header('Location: http://localhost/medicina/index.php?page=homepage');
     }
   }
 
