@@ -22,7 +22,7 @@ function logout(){
         <h5 class="my-3"><?php echo $final['email']?></h5>
         <p class="text-muted mb-1"></p>
         <div class="d-flex justify-content-center mb-2">
-            <button type="button" class="btn btn-outline-primary">Logout</button>
+            <button type="button" class="btn btn-outline-primary" >Logout</button>
         </div>
     </div>
 </div>

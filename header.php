@@ -17,7 +17,7 @@
           </a>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="http://localhost/medicina/index.php?page=mostra_at">Mostra Attivitá formative</a></li>
-            <li><a class="dropdown-item" href="#">Modifica Attivitá formative</a></li>
+            <li><a class="dropdown-item" href="http://localhost/medicina/index.php?page=modifica_at">Modifica Attivitá formative</a></li>
           </ul>
         </li>
         <li class="nav-item dropdown">

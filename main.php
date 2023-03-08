@@ -13,8 +13,11 @@ switch ($page) {
     case "mostra_at":
         include_once('./showtables.php');
         break;
-    case 4:
-        echo "edit unità";
+    case "modifica_uda":
+        include_once('./form_add_ud.php');
+        break;
+    case "modifica_at":
+        include_once('./form_add_ad.php');
         break;
     default:
         include("content-404.php");
