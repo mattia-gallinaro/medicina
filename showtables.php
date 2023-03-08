@@ -39,7 +39,7 @@ while ($row = $result_second->fetch_assoc()) {
 
 ?>
 <h1 style="text-align: center;">Attività formative</h1>
-<div class="" style="max-height:50%; overflow:scroll;">
+<div class="" style="max-height:100%; overflow:scroll;">
     <table class="table" style="margin-left: auto;
   margin-right: auto; text-align:center;">
         <thead>
@@ -67,20 +67,8 @@ while ($row = $result_second->fetch_assoc()) {
                     <td>
                         <?php echo $row['settore'] ?>
                     </td>
-                    <td><button class="btn btn-outline-dark">Ciao</button></td>
+                    <td><form method="POST" action="./deleteAd.php"><button class="btn btn-outline-dark" name="test" value="<?php echo $row['codice']?>">Delete</button></form></td>
                 </tr>
-                <!--<tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-        </tr>
-        <tr>
-            <th scope="row">3</th>
-            <td>Larry</td>
-            <td>the Bird</td>
-            <td>@twitter</td>
-        </tr>-->
             <?php } ?>
         </tbody>
     </table>

@@ -23,7 +23,7 @@ if ($result->num_rows > 0) {
 
 ?>
 <h1 style = "text-align: center">Unitá didattiche</h1>
-<div class="table-responsive" style="max-height:80%; overflow:scroll;">
+<div class="" style="max-height:100%; overflow:scroll;">
 <table class="table" style="margin-left: auto;
   margin-right: auto; text-align:center;">
     <thead>
@@ -43,20 +43,8 @@ if ($result->num_rows > 0) {
             <td><?php echo $row['nome']?></td>
             <td><?php echo $row['CFU']?></td>
             <td><?php echo $row['settore']?></td>
-            <td><button>Cancella</button></td>
+            <td><form method="POST" action="./deleteUd.php"><button class="btn btn-outline-dark" name="test" value="<?php echo $row['codice']?>">Elimina</button></td>
         </tr>
-        <!--<tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-        </tr>
-        <tr>
-            <th scope="row">3</th>
-            <td>Larry</td>
-            <td>the Bird</td>
-            <td>@twitter</td>
-        </tr>-->
         <?php } ?>
     </tbody>
 </table>

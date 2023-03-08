@@ -36,7 +36,7 @@ if((isset($_SESSION['user_id']) == false || $_SESSION['user_id'] <= 0) && $page 
         }
         ?>
     </div>
-    <div class="container-fluid" id="main">
+    <div class="container-fluid" id="main" style="padding-bottom:50px;">
         <?php 
         require ("./main.php");
         //require ("login.php")
