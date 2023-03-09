@@ -43,7 +43,7 @@ if ($result->num_rows > 0) {
             <td><?php echo $row['nome']?></td>
             <td><?php echo $row['CFU']?></td>
             <td><?php echo $row['settore']?></td>
-            <td><form method="POST" action="./deleteUd.php"><button class="btn btn-outline-dark" name="test" value="<?php echo $row['codice']?>">Elimina</button></td>
+            <td><form method="POST" action="./deleteUd.php"><button class="btn btn-outline-dark" name="test" value="<?php echo $row['codice']?>">Elimina</button></form></td>
         </tr>
         <?php } ?>
     </tbody>

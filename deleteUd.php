@@ -24,6 +24,6 @@ unset($sql);
 $sql = sprintf("DELETE FROM piano_di_studi WHERE codice = '%s'", $id);
 $db_conn->query($sql);
 
-header("Location: http://localhost/medicina/index.php?page=mostra_uda")
+header("Location: http://localhost/medicina/index.php?page=mostra_uda");
 
 ?> 

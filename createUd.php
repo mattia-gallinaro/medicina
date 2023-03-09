@@ -13,9 +13,11 @@ if (isset($_POST['codice']) && isset($_POST['nome']) && isset($_POST['CFU']) && 
     unset($sql);
 
     $sql = sprintf("INSERT INTO formativa_didattica(formativa ,didattica)
-     VALUES('%s', '%s')", $_POST['lang'][0], $_POST['codice']);
+     VALUES('%s', '%s')", $_POST['lang'], $_POST['codice']);
 
     $db_conn->query($sql);
     //echo json_encode($_POST['lang']);
 }
+
+header('Location:http://localhost/medicina/?page=mostra_uda');
 ?>
