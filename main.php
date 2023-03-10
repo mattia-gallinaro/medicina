@@ -20,6 +20,7 @@ switch ($page) {
         include_once('./form_add_ad.php');
         break;
     default:
-        include("content-404.php");
+        include_once("content-404.php");
+        break;
 }
 ?>

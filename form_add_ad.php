@@ -38,19 +38,19 @@ while ($row = $result_second->fetch_assoc()) {
     <h1 style="text-align:center;">Crea un'attivitá</h1><br />
     <form method="POST" action="./createAf.php">
         <div class="form-outline mb-4">
-            <input type="text" id="form6Example3" class="form-control campo_form" name="codice" style="border-width:2px; border-color:black;"/>
+            <input type="text" id="form6Example3" class="form-control campo_form" name="codice" style="border-width:1px; border-color:black;"/>
             <label class="form-label" for="form6Example3">Codice</label>
         </div>
         <div class="form-outline mb-4">
-            <input type="text" id="form6Example3" class="form-control campo_form" name="nome" style="border-width:2px; border-color:black;"/>
+            <input type="text" id="form6Example3" class="form-control campo_form" name="nome" style="border-width:1px; border-color:black;"/>
             <label class="form-label" for="form6Example3">nome</label>
         </div>
         <div class="form-outline mb-4">
-            <input type="text" id="form6Example3" class="form-control campo_form" name="CFU" style="border-width:2px; border-color:black;"/>
+            <input type="text" id="form6Example3" class="form-control campo_form" name="CFU" style="border-width:1px; border-color:black;"/>
             <label class="form-label" for="form6Example3">CFU</label>
         </div>
         <div class="form-outline mb-4">
-            <input type="text" id="form6Example4" class="form-control campo_form" name="settore" style="border-width:2px; border-color:black;"/>
+            <input type="text" id="form6Example4" class="form-control campo_form" name="settore" style="border-width:1px; border-color:black;"/>
             <label class="form-label" for="form6Example4">Settore</label>
         </div>
         <button type="submit" class="btn btn-primary btn-block mb-4">Crea attività didattica</button>
@@ -67,15 +67,15 @@ while ($row = $result_second->fetch_assoc()) {
             </select>
         </div>
         <div class="form-outline mb-4">
-            <input type="text" id="form6Example3" class="form-control" name="nome_at" style="border-width:2px; border-color:black;"/>
+            <input type="text" id="form6Example3" class="form-control" name="nome_at" style="border-width:1px; border-color:black;"/>
             <label class="form-label" for="form6Example3">Nome</label>
         </div>
         <div class="form-outline mb-4">
-            <input type="text" id="form6Example3" class="form-control" name="CFU_at" style="border-width:2px; border-color:black;"/>
+            <input type="text" id="form6Example3" class="form-control" name="CFU_at" style="border-width:1px; border-color:black;"/>
             <label class="form-label" for="form6Example3">CFU</label>
         </div>
         <div class="form-outline mb-4">
-            <input type="text" id="form6Example4" class="form-control" name="settore_at" style="border-width:2px; border-color:black;"/>
+            <input type="text" id="form6Example4" class="form-control" name="settore_at" style="border-width:1px; border-color:black;"/>
             <label class="form-label" for="form6Example4">Settore</label>
         </div>
         <button type="submit" name="submit" class="btn btn-primary btn-block mb-4">Modifica attività didattica</button>
