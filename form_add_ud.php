@@ -49,6 +49,7 @@ if ($result->num_rows > 0) {
 ?>
 
 <div class="containe-fluid" style="background-color:#ffffff;">
+    <h1 style="text-align:center;">Crea uda</h1>
     <form method="POST" onsubmit="return validateForm();" action="./createUd.php">
         <div class="row mb-4">
             <div class="col">
@@ -74,7 +75,7 @@ if ($result->num_rows > 0) {
         </div>
         <div class="form-outline mb-4">
             <span>Seleziona in che attività formativa inserire l'uda</span> <br />
-            <select name="lang">
+            <select name="lang" style="max-width:100%; overflow:hidden;">
                 <?php for ($i = 0; $i < count($atf_get_all); $i++) { ?>
                     <option name="at_code" value="<?php echo $atf_get_all[$i]['codice'] ?>"><?php echo $atf_get_all[$i]['codice'] ?> - <?php echo $atf_get_all[$i]['nome'] ?></option>
                 <?php } ?>
@@ -83,29 +84,21 @@ if ($result->num_rows > 0) {
         <button type="submit" class="btn btn-outline-dark btn-block mb-4">Crea attività didattica</button>
     </form>
 
-    <form method="POST" onsubmit="return validateForm();" action="./modifyUd.php">
+    <h1 style="text-align:center;">Modifica uda</h1>
+    <form method="POST" onsubmit="return validateForm();" action="./modifyUd.php" style="margin:auto;">
         <div class="form-outline mb-4">
             <span>Seleziona in che attività formativa inserire l'uda</span> <br />
-            <select name="cod_ut">
+            <select name="fruit" style="max-width:100%; overflow: hidden;">
+            <option value="" disabled selected>Scegli l'uda</option>
                 <?php for ($i = 0; $i < count($uda_all); $i++) { ?>
-                    <option name="ut_code" value="<?php echo $uda_all[$i]['codice'] ?>"><?php echo $uda_all[$i]['codice'] ?>
+                    <option value="<?php echo $uda_all[$i]['codice'] ?>"><?php echo $uda_all[$i]['codice'] ?>
                         - <?php echo $uda_all[$i]['nome'] ?></option>
                 <?php } ?>
             </select>
         </div>
-        <div class="row mb-4">
-            <div class="col">
-                <div class="form-outline">
-                    <input type="text" id="form6Example1" class="form-control campo_form" name="codice_ud" />
-                    <label class="form-label" for="form6Example1">Codice</label>
-                </div>
-            </div>
-            <div class="col">
-                <div class="form-outline">
-                    <input type="text" id="form6Example2" class="form-control campo_form" name="nome_ud" />
-                    <label class="form-label" for="form6Example2">nome</label>
-                </div>
-            </div>
+        <div class="form-outline mb-4">
+            <input type="text" id="form6Example3" class="form-control campo_form" name="nome_ud" />
+            <label class="form-label" for="form6Example3">nome</label>
         </div>
         <div class="form-outline mb-4">
             <input type="text" id="form6Example3" class="form-control campo_form" name="CFU_ud" />
@@ -120,9 +113,9 @@ if ($result->num_rows > 0) {
 </div>
 
 <script type="text/javascript">
-    $("input.check").on("change", function () {
+    /*$("input.check").on("change", function () {
         $("input.check").not(this).prop('checked', false);
-    })
+    })*/
 
 
     function validateForm() {

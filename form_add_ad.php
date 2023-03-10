@@ -68,27 +68,19 @@ while ($row = $result_second->fetch_assoc()) {
         <button type="submit" class="btn btn-primary btn-block mb-4">Crea attività didattica</button>
     </form>
 
-    <form method="POST" action="./modifyAt.php">
+    <form method="post" action="./modifyAt.php">
         <div class="form-outline mb-4">
-            <select name="codice_at">
+            <h2>Seleziona l'attivitá da modificare</h2><br/>
+            <select name="fruit" style="max-width:100%; overflow:scroll;">
+            <option value="" disabled selected>Choose option</option>
                 <?php for ($i = 0; $i < count($atf_get_all); $i++) { ?>
-                    <option name="at_code" value="<?php echo $atf_get_all[$i]['codice'] ?>"><?php echo $atf_get_all[$i]['codice'] ?> - <?php echo $atf_get_all[$i]['nome'] ?></option>
+            <option style="max-width:100%;"value="<?php echo $atf_get_all[$i]['codice'] ?>"><?php echo $atf_get_all[$i]['codice'] ?> - <?php echo $atf_get_all[$i]['nome'] ?></option>
                 <?php } ?>
             </select>
         </div>
-        <div class="row mb-4">
-            <div class="col">
-                <div class="form-outline">
-                    <input type="text" id="form6Example1" class="form-control" name="codice_at" />
-                    <label class="form-label" for="form6Example1">Codice</label>
-                </div>
-            </div>
-            <div class="col">
-                <div class="form-outline">
-                    <input type="text" id="form6Example2" class="form-control" name="nome_at" />
-                    <label class="form-label" for="form6Example2">nome</label>
-                </div>
-            </div>
+        <div class="form-outline mb-4">
+            <input type="text" id="form6Example3" class="form-control" name="nome_at"/>
+            <label class="form-label" for="form6Example3">Nome</label>
         </div>
 
         <!-- Text input -->
@@ -104,6 +96,6 @@ while ($row = $result_second->fetch_assoc()) {
         </div>
 
         <!-- Submit button -->
-        <button type="submit" class="btn btn-primary btn-block mb-4">Modifica attività didattica</button>
+        <button type="submit" name="submit" class="btn btn-primary btn-block mb-4">Modifica attività didattica</button>
     </form>
 </div>
