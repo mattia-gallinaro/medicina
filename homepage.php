@@ -12,9 +12,7 @@ $result = $db_conn->query($sql);
 $final = $result->fetch_assoc();
 
 
-function logout(){
-    $_SESSION['user_id'] = null;
-}
+
 ?>
 
 <div class="card mb-4" style="max-width:250px; position:relative;">
@@ -22,7 +20,9 @@ function logout(){
         <h5 class="my-3"><?php echo $final['email']?></h5>
         <p class="text-muted mb-1"></p>
         <div class="d-flex justify-content-center mb-2">
-            <button type="button" class="btn btn-outline-primary" >Logout</button>
+            <form method="post" action="./logout.php">
+                <button type="submit" name="ciao" class="btn btn-outline-primary">Logout</button>
+            </form>
         </div>
     </div>
 </div>

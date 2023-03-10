@@ -51,26 +51,20 @@ if ($result->num_rows > 0) {
 <div class="containe-fluid" style="background-color:#ffffff;">
     <h1 style="text-align:center;">Crea uda</h1>
     <form method="POST" onsubmit="return validateForm();" action="./createUd.php">
-        <div class="row mb-4">
-            <div class="col">
-                <div class="form-outline">
-                    <input type="text" id="form6Example1" class="form-control campo_form" name="codice" />
-                    <label class="form-label" for="form6Example1">Codice</label>
-                </div>
-            </div>
-            <div class="col">
-                <div class="form-outline">
-                    <input type="text" id="form6Example2" class="form-control campo_form" name="nome" />
-                    <label class="form-label" for="form6Example2">nome</label>
-                </div>
-            </div>
+        <div class="form-outline mb-4">
+            <input type="text" id="form6Example3" class="form-control campo_form" name="codice" style="border-width:2px; border-color:black;"/>
+            <label class="form-label" for="form6Example3">Codice</label>
         </div>
         <div class="form-outline mb-4">
-            <input type="text" id="form6Example3" class="form-control campo_form" name="CFU" />
+            <input type="text" id="form6Example3" class="form-control campo_form" name="nome" style="border-width:2px; border-color:black;"/>
+            <label class="form-label" for="form6Example3">nome</label>
+        </div>
+        <div class="form-outline mb-4">
+            <input type="text" id="form6Example3" class="form-control campo_form" name="CFU" style="border-width:2px; border-color:black;"/>
             <label class="form-label" for="form6Example3">CFU</label>
         </div>
         <div class="form-outline mb-4">
-            <input type="text" id="form6Example4" class="form-control campo_form" name="settore" />
+            <input type="text" id="form6Example4" class="form-control campo_form" name="settore" style="border-width:2px; border-color:black;"/>
             <label class="form-label" for="form6Example4">Settore</label>
         </div>
         <div class="form-outline mb-4">
@@ -89,7 +83,7 @@ if ($result->num_rows > 0) {
         <div class="form-outline mb-4">
             <span>Seleziona in che attività formativa inserire l'uda</span> <br />
             <select name="fruit" style="max-width:100%; overflow: hidden;">
-            <option value="" disabled selected>Scegli l'uda</option>
+                <option value="" disabled selected>Scegli l'uda</option>
                 <?php for ($i = 0; $i < count($uda_all); $i++) { ?>
                     <option value="<?php echo $uda_all[$i]['codice'] ?>"><?php echo $uda_all[$i]['codice'] ?>
                         - <?php echo $uda_all[$i]['nome'] ?></option>
@@ -97,15 +91,15 @@ if ($result->num_rows > 0) {
             </select>
         </div>
         <div class="form-outline mb-4">
-            <input type="text" id="form6Example3" class="form-control campo_form" name="nome_ud" />
+            <input type="text" id="form6Example3" class="form-control campo_form" name="nome_ud" style="border-width:2px; border-color:black;"/>
             <label class="form-label" for="form6Example3">nome</label>
         </div>
         <div class="form-outline mb-4">
-            <input type="text" id="form6Example3" class="form-control campo_form" name="CFU_ud" />
+            <input type="text" id="form6Example3" class="form-control campo_form" name="CFU_ud" style="border-width:2px; border-color:black;"/>
             <label class="form-label" for="form6Example3">CFU</label>
         </div>
         <div class="form-outline mb-4">
-            <input type="text" id="form6Example4" class="form-control campo_form" name="settore_ud" />
+            <input type="text" id="form6Example4" class="form-control campo_form" name="settore_ud" style="border-width:2px; border-color:black;"/>
             <label class="form-label" for="form6Example4">Settore</label>
         </div>
         <button type="submit" class="btn btn-outline-dark btn-block mb-4">Modifica attività didattica</button>
