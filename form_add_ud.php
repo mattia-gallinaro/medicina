@@ -161,12 +161,12 @@ if ($result->num_rows > 0) {
                 });
             }
             );
-        fetch("http://localhost/medicina/getArchiveActivity.php")
+        /*fetch("http://localhost/medicina/getArchiveActivity.php")
             .then((response) => response.json())
             .then((data) => {
                 console.log(data);
 
-            });
+            });*/
     }
     );
 

@@ -61,7 +61,7 @@ if ($result->num_rows > 0) {
                     <td>
                         <?php echo $row['set_ud'] ?>
                     </td>
-                    <td><form method="POST" action="./deleteUd.php"><button class="btn btn-outline-dark" name="test" value="<?php echo $row['cod_ud']?>">Delete</button></form></td>
+                    <td><form method="POST" action="./deleteAd.php"><button class="btn btn-outline-dark" name="test" value="<?php echo $row['cod_ud']?>">Delete</button></form></td>
                 </tr>
             <?php } ?>
         </tbody>
