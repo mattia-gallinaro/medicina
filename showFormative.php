@@ -36,32 +36,42 @@ if ($result->num_rows > 0) {
                 <th scope="col">Nome Unità</th>
                 <th scope="col">CFU</th>
                 <th scope="col">Settore</th>
-                <th scope="col">Btn</th>
+                <th scope="col">Dissocia</th>
+                <th scope="col">Elimina</th>
             </tr>
         </thead>
         <tbody>
-            <?php foreach ($atf_get_all as $row) {
+            <?php
+            //$i = 0; 
+            for($i = 0; $i < count($atf_get_all); $i++){
                 //echo $row['nome'];?>
                 <tr>
+                    <?php if($i == 0 || $atf_get_all[$i]['cod_at'] != $atf_get_all[$i - 1]['cod_at']){?>
                     <td scope="row">
-                        <?php echo $row['cod_at'] ?>
+                        <?php echo $atf_get_all[$i]['cod_at']; ?>
                     </td>
                     <td>
-                        <?php echo $row['nome_at'] ?>
+                        <?php echo $atf_get_all[$i]['nome_at'];?>
+                    </td>
+                    <?php }
+                    else{ ?>
+                    <td scope="row"></td>
+                    <td></td>
+                    <?php }?>
+                    <td>
+                        <?php echo $atf_get_all[$i]['cod_ud']; ?>
                     </td>
                     <td>
-                        <?php echo $row['cod_ud'] ?>
+                        <?php echo $atf_get_all[$i]['nome_ud']; ?>
                     </td>
                     <td>
-                        <?php echo $row['nome_ud'] ?>
+                        <?php echo $atf_get_all[$i]['cfu_ud']; ?>
                     </td>
                     <td>
-                        <?php echo $row['cfu_ud'] ?>
+                        <?php echo $atf_get_all[$i]['set_ud']; ?>
                     </td>
-                    <td>
-                        <?php echo $row['set_ud'] ?>
-                    </td>
-                    <td><form method="POST" action="./deleteUd.php"><button class="btn btn-outline-dark" name="test" value="<?php echo $row['cod_ud']?>">Delete</button></form></td>
+                    <td><form method="POST" action="./removeConnUdaAf.php"><button class="btn btn-outline-dark" name="cod_ud" value="<?php echo $atf_get_all[$i]['cod_ud']?>"><i class='bx bx-unlink'></i></button></form></fd></td>
+                    <td><form method="POST" action="./deleteUd.php"><button class="btn btn-outline-dark" name="test" value="<?php echo $atf_get_all[$i]['cod_ud']?>"><i class='bx bxs-trash-alt'></i></button></form></td>
                 </tr>
             <?php } ?>
         </tbody>
