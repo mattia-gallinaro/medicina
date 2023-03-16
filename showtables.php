@@ -1,4 +1,5 @@
 <?php
+//finito
 require "./connect.php";
 
 $db = new Database();

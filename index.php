@@ -1,4 +1,5 @@
 <?php
+//finito
 session_start();
 $page = null;
 if(isset($_GET['page']))
@@ -11,6 +12,14 @@ if((isset($_SESSION['user_id']) == false || $_SESSION['user_id'] <= 0) && $page 
 }else if($page== "index"){
     header("Location:http://localhost/medicina/index.php?page=homepage");
 }
+
+
+
+if(($page == "modifica_uda" || $page == "modifica_at") && $_SESSION['role_user'] != "admin"){
+    header("Location: http://localhost/medicina/?page=homepage");
+}
+
+//if($_SESSION['role_us'] != "admin " && ($page == "modifica_uda" || $page == "modifica_at")){}
 
 //if(isset($_SESSION['user_id']) || $page == null){
 //    header('Location:http://localhost/medicina/index.php?page='. 'login');
@@ -37,7 +46,7 @@ if((isset($_SESSION['user_id']) == false || $_SESSION['user_id'] <= 0) && $page 
         }
         ?>
     </div>
-    <div class="container-fluid" id="main" style="padding-bottom:50px;">
+    <div class="container-fluid row justify-content-center" id="main" style="padding-bottom:50px;">
         <?php 
         require ("./main.php");
         //require ("login.php")

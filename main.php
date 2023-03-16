@@ -1,4 +1,5 @@
 <?php
+//
 $page = $_GET['page'];
 switch ($page) {
     case "login":

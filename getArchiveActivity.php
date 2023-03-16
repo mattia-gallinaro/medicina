@@ -1,4 +1,5 @@
 <?php
+//finito
 require_once('./connect.php');
 header("Content-Type: application/json; charset=UTF-8M;");
     $db = new Database();

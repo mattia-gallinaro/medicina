@@ -1,4 +1,6 @@
 <?php
+//finito
+
 require_once('./connect.php');
 
 $db = new Database();
@@ -35,7 +37,8 @@ while ($row = $result_second->fetch_assoc()) {
 ?>
 
 <div class="containe-fluid row justify-content-center" style="background-color:#ffffff;">
-    <div class="col-4 text-center">
+    <div class="hidden-md col-1"></div>
+    <div class="col-sm-12 col-md-6 col-lg-4 text-center">
         <h2 style="text-align:center;">Crea un'attivitá</h2><br />
         <form method="POST" action="./createAf.php">
             <div class="form-outline mb-4">
@@ -61,15 +64,15 @@ while ($row = $result_second->fetch_assoc()) {
             <button type="submit" class="btn btn-primary btn-block mb-4">Crea attività didattica</button>
         </form>
     </div>
-    <div class="col-1"></div>
-    <div class="col-4 text-center">
+    <div class="hidden-md col-1"></div>
+    <div class="col-sm-12 col-md-6 col-lg-4 text-center">
         <form method="post" action="./modifyAt.php">
             <div class="form-outline mb-4">
                 <h2 style="text-align:center;">Seleziona l'attivitá da modificare</h2><br />
                 <select id="listactvity" name="fruit" style="width:100%; overflow:scroll; border-radius:5px;">
-                    <option value="" disabled selected>Seleziona l'attivitá</option>
+                    <option value="0" disabled selected>Seleziona l'attivitá</option>
                     <?php for ($i = 0; $i < count($atf_get_all); $i++) { ?>
-                        <option style="max-width:100%;" value="<?php echo $atf_get_all[$i]['codice'] ?>"><?php echo $atf_get_all[$i]['codice']?></option>
+                        <option style="max-width:100%;" value="<?php echo $atf_get_all[$i]['codice'] ?>"><?php echo $atf_get_all[$i]['codice'] ?></option>
                     <?php } ?>
                 </select>
             </div>
@@ -98,6 +101,7 @@ while ($row = $result_second->fetch_assoc()) {
                 didattica</button>
         </form>
     </div>
+    <div class="hidden-md col-1"></div>
 </div>
 
 <script type="text/javascript">

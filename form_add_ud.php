@@ -1,4 +1,5 @@
 <?php
+//finire styling
 require_once('./connect.php');
 
 $db = new Database();
@@ -48,8 +49,8 @@ if ($result->num_rows > 0) {
 
 ?>
 
-<div class="containe-fluid row justify-content-center" style="background-color:#ffffff;">
-    <div class="col-3 text-center">
+<div class="container-fluid row justify-content-center" style="background-color:#ffffff;">
+    <div class="col-4 text-center">
         <h1 style="text-align:center;">Crea uda</h1>
         <form method="POST" onsubmit="return validateForm();" action="./createUd.php">
             <div class="form-outline mb-4">
@@ -73,25 +74,26 @@ if ($result->num_rows > 0) {
                 <label class="form-label" for="form6Example4">Settore</label>
             </div>
             <div class="form-outline mb-4">
-                <span>Seleziona in che attività formativa inserire l'uda</span> <br />
+                <span>Seleziona in che attività formativa inserire l'uda</span><br />
                 <select name="lang" style="width:100%; overflow:scroll; border-radius:5px;">
                     <?php for ($i = 0; $i < count($atf_get_all); $i++) { ?>
-                        <option name="at_code" value="<?php echo $atf_get_all[$i]['codice'] ?>"><?php echo $atf_get_all[$i]['codice'] ?> - <?php echo $atf_get_all[$i]['nome'] ?></option>
+                        <option name="at_code" data-limit="30" value="<?php echo $atf_get_all[$i]['codice'] ?>"><?php echo $atf_get_all[$i]['codice'] ?> - <?php echo $atf_get_all[$i]['nome'] ?> </option>
                     <?php } ?>
                 </select>
             </div>
             <button type="submit" class="btn btn-outline-dark btn-block mb-4">Crea attività didattica</button>
         </form>
     </div>
-    <div class="col-3 text-center">
+    <div class="col-1"></div>
+    <div class="col-4 text-center">
         <h1 style="text-align:center;">Modifica uda</h1>
         <form method="POST" onsubmit="return validateForm();" action="./modifyUd.php" style="margin:auto;">
             <div class="form-outline mb-4">
-                <span>Seleziona in che attività formativa inserire l'uda</span> <br />
+                <span>Seleziona il codice dell'uda da modificare</span> <br />
                 <select name="fruit" id="listactvity" style="width:100%; overflow: hidden;">
-                    <option value="" disabled selected>Scegli l'uda</option>
+                    <option value="0" disabled selected>Scegli l'uda</option>
                     <?php for ($i = 0; $i < count($uda_all); $i++) { ?>
-                        <option style="max-width:100%; overflow:scroll;" value="<?php echo $uda_all[$i]['codice'] ?>"><?php echo $uda_all[$i]['codice'] ?>
+                        <option style="max-width:100%; overflow:scroll;" data-limit="30" value="<?php echo $uda_all[$i]['codice'] ?>"><?php echo $uda_all[$i]['codice'] ?>
                             - <?php echo $uda_all[$i]['nome'] ?></option>
                     <?php } ?>
                 </select>
@@ -114,22 +116,23 @@ if ($result->num_rows > 0) {
             <button type="submit" class="btn btn-outline-dark btn-block mb-4">Modifica attività didattica</button>
         </form>
     </div>
-    <div class="col-3 text-center">
+</div>
+<div class="container-fluid row justify-content-center">
         <h1>Modifica Assegnazione Unità didattiche</h1>
         <form method="POST" action="./changeCol.php">
-            <div class="form-outline mb-4">
+            <div class="form-outline mb-4 text-center justify-content-center">
                 <span>Seleziona in che attività formativa inserire l'uda</span><br />
                 <select name="atfo" style="width:100%; overflow:scroll; border-radius:5px;">
-                    <option value="" disabled selected>Scegli l'attività formativa</option>
+                    <option value="0" disabled selected>Scegli l'attività formativa</option>
                     <?php for ($i = 0; $i < count($atf_get_all); $i++) { ?>
                         <option name="at_code" value="<?php echo $atf_get_all[$i]['codice'] ?>"><?php echo $atf_get_all[$i]['codice'] ?> - <?php echo $atf_get_all[$i]['nome'] ?></option>
                     <?php } ?>
                 </select>
             </div>
-            <div class="form-outline mb-4">
+            <div class="form-outline mb-4 text-center justify-content-center">
                 <span>Seleziona in che attività formativa inserire l'uda</span> <br />
                 <select name="udfo" id="listactvity" style="width:100%; overflow: hidden;">
-                    <option value="" disabled selected>Scegli l'uda</option>
+                    <option value="0" disabled selected>Scegli l'uda</option>
                     <?php for ($i = 0; $i < count($uda_all); $i++) { ?>
                         <option style="max-width:100%; overflow:scroll;" value="<?php echo $uda_all[$i]['codice'] ?>"><?php echo $uda_all[$i]['codice'] ?>
                             - <?php echo $uda_all[$i]['nome'] ?></option>
@@ -138,9 +141,7 @@ if ($result->num_rows > 0) {
             </div>
             <button type="submit" class="btn btn-outline-dark btn-block mb-4">Cambia collegamento</button>
         </form>
-    </div>
 </div>
-
 <script type="text/javascript">
     /*$("input.check").on("change", function () {
         $("input.check").not(this).prop('checked', false);

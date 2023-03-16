@@ -1,4 +1,5 @@
 <?php
+//finito
 require_once('./connect.php');
 $db = new Database();
 $db_conn = $db->connect();
@@ -9,9 +10,21 @@ FROM utente u
 inner join ruolo r on r.id = u.ruolo
 WHERE u.id= %d", $_SESSION['user_id']);
 $result = $db_conn->query($sql);
+
 $final = $result->fetch_assoc();
 
+if ((isset($_SESSION['role_user']) == false || $_SESSION['role_user'] == "")) {
+    unset($sql);
 
+    $sql = sprintf("SELECT r.descr
+FROM utente u
+INNER JOIN ruolo r on r.id = u.ruolo
+WHERE u.id = %d", $_SESSION['user_id']);
+
+    $result = $db_conn->query($sql);
+    $ar_resu = $result->fetch_assoc();
+    $_SESSION['role_user'] = $ar_resu['descr'];
+}
 
 ?>
 <div class="col-12 row justify-content-center">

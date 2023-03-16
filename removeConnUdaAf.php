@@ -1,4 +1,5 @@
 <?php
+//finito
 require_once('./connect.php');
 $db = new Database();
 $db_conn = $db->connect();
