@@ -50,7 +50,7 @@ if ($result->num_rows > 0) {
 ?>
 
 <div class="container-fluid row justify-content-center" style="background-color:#ffffff;">
-    <div class="col-4 text-center">
+    <div class="col-sm-12 col-md-6 col-lg-4 text-center">
         <h1 style="text-align:center;">Crea uda</h1>
         <form method="POST" onsubmit="return validateForm();" action="./createUd.php">
             <div class="form-outline mb-4">
@@ -84,8 +84,8 @@ if ($result->num_rows > 0) {
             <button type="submit" class="btn btn-outline-dark btn-block mb-4">Crea attività didattica</button>
         </form>
     </div>
-    <div class="col-1"></div>
-    <div class="col-4 text-center">
+    <div class="hidden-md col-1"></div>
+    <div class="col-sm-12 col-md-6 col-lg-4 text-center">
         <h1 style="text-align:center;">Modifica uda</h1>
         <form method="POST" onsubmit="return validateForm();" action="./modifyUd.php" style="margin:auto;">
             <div class="form-outline mb-4">
@@ -116,8 +116,9 @@ if ($result->num_rows > 0) {
             <button type="submit" class="btn btn-outline-dark btn-block mb-4">Modifica attività didattica</button>
         </form>
     </div>
+    <div class="hidden-md col-1"></div>
 </div>
-<div class="container-fluid row justify-content-center">
+<div class="container-fluid row justify-content-center text-center">
         <h1>Modifica Assegnazione Unità didattiche</h1>
         <form method="POST" action="./changeCol.php">
             <div class="form-outline mb-4 text-center justify-content-center">
