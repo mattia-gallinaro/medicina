@@ -20,6 +20,12 @@ switch ($page) {
     case "modifica_at":
         include_once('./form_add_ad.php');
         break;
+    case "mostra_utenti":
+        include_once('./showUsers.php');
+        break;
+    case "modifica_utenti":
+        include_once('./form_add_user.php');
+        break;
     default:
         include_once("content-404.php");
         break;

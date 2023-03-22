@@ -1,6 +1,6 @@
 <?php 
 //finito
-session_start();
+//session_start();
 require_once('./connect.php');
 
 $db = new Database();

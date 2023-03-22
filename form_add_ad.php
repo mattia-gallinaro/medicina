@@ -57,7 +57,7 @@ while ($row = $result_second->fetch_assoc()) {
                 <label class="form-label" for="form6Example3">CFU</label>
             </div>
             <div class="form-outline mb-4">
-                <input type="text" id="form6Example4" class="form-control campo_form" name="settore"
+                <input type="text" id="form6Example3" class="form-control campo_form" name="settore"
                     style="border-width:1px; border-color:black;" />
                 <label class="form-label" for="form6Example4">Settore</label>
             </div>
@@ -127,3 +127,43 @@ while ($row = $result_second->fetch_assoc()) {
         });*/
     });
 </script>
+
+
+<!--
+
+<div class="form-outline mb-4">
+                <input type="text" id="form6Example3" class="form-control campo_form" name="n_settore"
+                    style="border-width:1px; border-color:black;" />
+                <label class="form-label" for="form6Example4">Numero Settore</label>
+            </div>
+            <div class="form-outline mb-4">
+                <input type="text" id="form6Example3" class="form-control campo_form" name="ambito"
+                    style="border-width:1px; border-color:black;" />
+                <label class="form-label" for="form6Example4">TAF Ambito</label>
+            </div>
+            <div class="form-outline mb-4">
+                <input type="text" id="form6Example3" class="form-control campo_form" name="lezione_ore"
+                    style="border-width:1px; border-color:black;" />
+                <label class="form-label" for="form6Example4">Ore Lezione</label>
+            </div>
+            <div class="form-outline mb-4">
+                <input type="text" id="form6Example3" class="form-control campo_form" name="laboratorio_ore"
+                    style="border-width:1px; border-color:black;" />
+                <label class="form-label" for="form6Example4">Ore Laboratorio</label>
+            </div>
+            <div class="form-outline mb-4">
+                <input type="text" id="form6Example3" class="form-control campo_form" name="Tirocino_ore"
+                    style="border-width:1px; border-color:black;" />
+                <label class="form-label" for="form6Example4">Ore Tirocino</label>
+            </div>
+            <div class="form-outline mb-4">
+                <input type="text" id="form6Example3" class="form-control campo_form" name="ripo_insegnamento"
+                    style="border-width:1px; border-color:black;" />
+                <label class="form-label" for="form6Example4">Tipo Insegnamento</label>
+            </div>
+            <div class="form-outline mb-4">
+                <input type="text" id="form6Example3" class="form-control campo_form" name="ripo_insegnamento"
+                    style="border-width:1px; border-color:black;" />
+                <label class="form-label" for="form6Example4">Tipo Insegnamento</label>
+            </div>
+-->

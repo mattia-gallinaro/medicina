@@ -25,7 +25,7 @@ if ($result->num_rows > 0) {
 
 
 ?>
-<h1 style="text-align: center;">Attività formative</h1>
+<h1 style="text-align: center;">Unità didattiche</h1>
 <div class="" style="max-height:100%; overflow:scroll;">
     <table class="table" style="margin-left: auto;
   margin-right: auto; text-align:center;">
@@ -37,8 +37,10 @@ if ($result->num_rows > 0) {
                 <th scope="col">Nome Unità</th>
                 <th scope="col">CFU</th>
                 <th scope="col">Settore</th>
+                <?php if($_SESSION['role_user'] == 'admin'){ ?>
                 <th scope="col">Dissocia</th>
                 <th scope="col">Elimina</th>
+                <?php } ?>
             </tr>
         </thead>
         <tbody>
@@ -71,8 +73,10 @@ if ($result->num_rows > 0) {
                     <td>
                         <?php echo $atf_get_all[$i]['set_ud']; ?>
                     </td>
+                    <?php if($_SESSION['role_user'] == 'admin'){ ?>
                     <td><form method="POST" action="./removeConnUdaAf.php"><button class="btn btn-outline-dark" name="cod_ud" value="<?php echo $atf_get_all[$i]['cod_ud']?>"><i class='bx bx-unlink'></i></button></form></fd></td>
                     <td><form method="POST" action="./deleteUd.php"><button class="btn btn-outline-dark" name="test" value="<?php echo $atf_get_all[$i]['cod_ud']?>"><i class='bx bxs-trash-alt'></i></button></form></td>
+                    <?php }?>
                 </tr>
             <?php } ?>
         </tbody>

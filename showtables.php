@@ -49,7 +49,9 @@ while ($row = $result_second->fetch_assoc()) {
                 <th scope="col">Nome</th>
                 <th scope="col">CFU</th>
                 <th scope="col">Settore</th>
-                <th scope="col">Btn</th>
+                <?php if($_SESSION['role_user'] == 'admin'){ ?>
+                <th scope="col">Cancella</th>
+                <?php } ?>
             </tr>
         </thead>
         <tbody>
@@ -68,7 +70,9 @@ while ($row = $result_second->fetch_assoc()) {
                     <td>
                         <?php echo $row['settore'] ?>
                     </td>
+                    <?php if($_SESSION['role_user'] == 'admin'){ ?>
                     <td><form method="POST" action="./deleteAd.php"><button class="btn btn-outline-dark" name="test" value="<?php echo $row['codice']?>">Delete</button></form></td>
+                    <?php } ?>
                 </tr>
             <?php } ?>
         </tbody>

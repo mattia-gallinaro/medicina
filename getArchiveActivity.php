@@ -1,7 +1,7 @@
 <?php
 //finito
 require_once('./connect.php');
-header("Content-Type: application/json; charset=UTF-8M;");
+header("Content-Type: application/json; charset=UTF-8;");
     $db = new Database();
     $db_conn = $db->connect();
 

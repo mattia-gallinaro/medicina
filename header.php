@@ -18,7 +18,9 @@
           </a>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="http://localhost/medicina/index.php?page=mostra_at">Mostra Attivitá formative</a></li>
+            <?php if($_SESSION['role_user'] == 'admin'){ ?>
             <li><a class="dropdown-item" href="http://localhost/medicina/index.php?page=modifica_at">Modifica Attivitá formative</a></li>
+            <?php } ?>
           </ul>
         </li>
         <li class="nav-item dropdown">
@@ -27,9 +29,22 @@
           </a>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="http://localhost/medicina/index.php?page=mostra_uda">Mostra Unitá didattiche</a></li>
+            <?php if($_SESSION['role_user'] == 'admin'){ ?>
             <li><a class="dropdown-item" href="http://localhost/medicina/index.php?page=modifica_uda">Modifica Unitá didattiche</a></li>
+            <?php } ?>
           </ul>
         </li>
+        <?php if($_SESSION['role_user'] == 'admin'){ ?>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Utente
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="http://localhost/medicina/index.php?page=mostra_utenti">Mostra Utenti</a></li>
+            <li><a class="dropdown-item" href="http://localhost/medicina/index.php?page=modifica_utenti">Modifica Utenti</a></li>
+          </ul>
+        </li>
+        <?php } ?>
       </ul>
       <form class="d-flex" role="search">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">

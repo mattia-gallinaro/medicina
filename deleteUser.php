@@ -1,6 +1,4 @@
-<?php 
-//finito
-//session_start();
+<?php
 require_once('./connect.php');
 
 $db = new Database();
@@ -31,5 +29,4 @@ $sql = sprintf("DELETE FROM piano_di_studi WHERE codice = '%s'", $id);
 $db_conn->query($sql);
 
 header("Location: http://localhost/medicina/index.php?page=mostra_at");
-
-?> 
+?>

@@ -15,15 +15,10 @@ if((isset($_SESSION['user_id']) == false || $_SESSION['user_id'] <= 0) && $page 
 
 
 
-if(($page == "modifica_uda" || $page == "modifica_at") && $_SESSION['role_user'] != "admin"){
+if(($page == "modifica_uda" || $page == "modifica_at" || $page == "mostra_utenti" || $page == "modifica_utenti") && $_SESSION['role_user'] != "admin"){
     header("Location: http://localhost/medicina/?page=homepage");
 }
 
-//if($_SESSION['role_us'] != "admin " && ($page == "modifica_uda" || $page == "modifica_at")){}
-
-//if(isset($_SESSION['user_id']) || $page == null){
-//    header('Location:http://localhost/medicina/index.php?page='. 'login');
-//}
 
 ?>
 
