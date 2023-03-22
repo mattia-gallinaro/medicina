@@ -62,7 +62,7 @@ while ($row = $result->fetch_assoc()) {
     </div>
     <div class="hidden-md col-1"></div>
     <div class="col-sm-12 col-md-6 col-lg-4 text-center">
-        <form method="post" action="./modifyAt.php">
+        <form method="post" action="./modifyUser.php">
             <div class="form-outline mb-4">
                 <h2 style="text-align:center;">Seleziona l'utente da modificare</h2><br />
                 <select id="listusers" name="usermod" style="width:100%; overflow:scroll; border-radius:5px;">
@@ -73,7 +73,7 @@ while ($row = $result->fetch_assoc()) {
                 </select>
             </div>
             <div class="form-outline mb-2">
-                <input type="text" id="test30" id="form6Example3" class="form-control" name="nome_at"
+                <input type="text" id="test30" id="form6Example3" class="form-control" name="nomeuser"
                     style="border-width:1px; border-color:black;" />
                 <label class="form-label" for="form6Example3">
                     <p>Email</p>

@@ -44,7 +44,7 @@ while($row = $result->fetch_assoc()) {
                     <td>
                         <?php echo $row['descr'] ?>
                     </td>
-                    <td><form method="POST" action="./deleteAd.php"><button class="btn btn-outline-dark" name="test" value="<?php echo $row['id']?>">Delete</button></form></td>
+                    <td><form method="POST" action="./deleteUser.php"><button class="btn btn-outline-dark" name="test" value="<?php echo $row['id']?>">Delete</button></form></td>
                 </tr>
             <?php } ?>
         </tbody>
